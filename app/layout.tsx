@@ -22,6 +22,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Explicitly adding the favicon */}
+        <link rel="icon" href="/favicon.ico" />
+        {/* Alternatively, if you're using a PNG */}
+        {/* <link rel="icon" href="/favicon.png" type="image/png" /> */}
+        
+        <meta name="image" property="og:image" content={'/favicon/android-chrome-192x192.png'} key="image" />
+        <meta property="og:image:width" content="300" key="og:image:width" />
+        <meta property="og:image:height" content="300" key="og:image:height" />
+      
+      </head>
+      
       <body className={inter.className} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
