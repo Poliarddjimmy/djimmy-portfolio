@@ -276,7 +276,7 @@ function HeroSection() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="text-muted-foreground text-lg mb-8 max-w-xl"
               >
-                With 9+ years of experience building scalable web applications and internal tools that drastically
+                With {new Date().getFullYear() - 2017}+ years of experience building scalable web applications and internal tools that drastically
                 improve efficiency. I've built fintech platforms, communication systems, e-commerce sites, and more
                 using modern technologies.
               </motion.p>
@@ -347,11 +347,12 @@ function HeroSection() {
               <div className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-primary to-primary/40 blur-xl opacity-70 animate-pulse"></div>
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-background">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center text-6xl font-bold text-white">
-                  DP
+                  {/* DP  */}
+                  <img src="/images/me.jpg" alt="DP" />
                 </div>
               </div>
               <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-primary/10 backdrop-blur-md border border-primary/20 flex items-center justify-center">
-                <span className="font-bold text-primary">9+ Years</span>
+                <span className="font-bold text-primary">{new Date().getFullYear() - 2017}+ Years</span>
               </div>
             </div>
           </motion.div>
@@ -1110,7 +1111,7 @@ function ProjectsSection() {
         >
           <div className="bg-card rounded-lg overflow-hidden border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="relative h-60 bg-gradient-to-r from-primary/20 to-primary/40 flex items-center justify-center">
-              <div className="absolute inset-0 bg-grid-pattern opacity-30"></div>
+              <div className="absolute inset-0 bg-grid-pattern opacity-30" style={{ background: 'url(/images/lennht.png)' }}></div>
               <div className="text-4xl font-bold text-white">LennHT</div>
             </div>
 
@@ -1124,7 +1125,7 @@ function ProjectsSection() {
                       Website
                     </Button>
                   </Link>
-                  <Link href="https://lennht.app" target="_blank">
+                  <Link href="https://lennht.dev" target="_blank">
                     <Button variant="outline" size="sm" className="gap-1">
                       <ExternalLink className="h-4 w-4" />
                       App

@@ -152,7 +152,7 @@ Building scalable APIs with Ruby on Rails requires careful planning and the use 
 
 Remember that scalability isn't just about handling high traffic; it's also about creating a codebase that can grow and evolve over time. With Rails' convention-over-configuration philosophy and the rich ecosystem of gems, you have all the tools you need to build excellent APIs.
     `,
-    coverImage: "/ruby.png",
+    coverImage: "/images/ruby.png",
     date: "2023-12-15",
     readingTime: "8 min read",
     tags: ["Ruby on Rails", "API", "Backend", "Performance"],
@@ -233,7 +233,7 @@ However, if you need maximum flexibility or are working on a project with unique
 
 Remember that you can always start with React and migrate to Next.js later if needed, as Next.js is built on top of React and shares the same core concepts.
     `,
-    coverImage: "/next_and_react.png",
+    coverImage: "/images/next_and_react.png",
     date: "2023-11-20",
     readingTime: "10 min read",
     tags: ["React", "Next.js", "Frontend", "JavaScript"],
@@ -480,7 +480,7 @@ While there is a learning curve, the benefits of TypeScript often outweigh the i
 
 Whether you're starting a new project or working with an existing codebase, consider giving TypeScript a try. Your future self (and your team) will thank you for it.
     `,
-    coverImage: "/ts.png",
+    coverImage: "/images/ts.png",
     date: "2023-10-05",
     readingTime: "12 min read",
     tags: ["TypeScript", "JavaScript", "Web Development", "Programming"],

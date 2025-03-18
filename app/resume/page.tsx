@@ -276,7 +276,7 @@ export default function ResumePage() {
                 </Link>
               </div>
               <Button asChild className="bg-[#1e2029] hover:bg-[#2a2c3a] text-white">
-                <a href="/djimmy-poliard-resume.pdf" download>
+                <a href="/files/djimmy-poliard-resume.pdf" download>
                   <Download className="mr-2 h-4 w-4" />
                   Download CV
                 </a>
@@ -290,7 +290,7 @@ export default function ResumePage() {
               <section className="mb-10">
                 <h2 className="text-xl font-bold mb-4 uppercase">Profile</h2>
                 <p className="text-gray-600 mb-4">
-                  Full-stack Developer with 9+ years of experience building scalable web applications and internal tools
+                  Full-stack Developer with {new Date().getFullYear() - 2017}+ years of experience building scalable web applications and internal tools
                   that drastically improve efficiency.
                 </p>
                 <p className="text-gray-600">
@@ -564,12 +564,12 @@ export default function ResumePage() {
                         </a>{" "}
                         -{" "}
                         <a
-                          href="https://lennht.app"
+                          href="https://lennht.dev"
                           target="_blank"
                           rel="noreferrer"
                           className="text-[#1e2029] hover:underline"
                         >
-                          https://lennht.app
+                          https://lennht.dev
                         </a>
                       </p>
                     </div>
