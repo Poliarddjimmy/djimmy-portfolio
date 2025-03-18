@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import Link from "next/link"
 import { useParams, useRouter } from "next/navigation"
 import { motion } from "framer-motion"
-import { ArrowLeft, Calendar, Clock, Tag } from "lucide-react"
+import { ArrowLeft, Calendar, Clock, Tag } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { getArticleBySlug, getRelatedArticles } from "@/lib/articles"
 import Markdown from "react-markdown"
@@ -91,22 +91,62 @@ export default function ArticlePage() {
             </div>
           </div>
 
-          <article className="prose prose-lg dark:prose-invert max-w-none">
+          <article className="prose prose-lg dark:prose-invert max-w-none prose-pre:p-0 prose-pre:m-0 prose-pre:bg-transparent prose-pre:overflow-hidden">
             <Markdown
               remarkPlugins={[remarkGfm]}
               components={{
                 code(props) {
                   const { children, className, node, ...rest } = props
                   const match = /language-(\w+)/.exec(className || "")
+                  
                   return match ? (
-                    <SyntaxHighlighter {...rest} style={vscDarkPlus} language={match[1]} PreTag="div">
-                      {String(children).replace(/\n$/, "")}
-                    </SyntaxHighlighter>
+                    <div className="my-6 overflow-hidden rounded-lg border border-border/50">
+                      <SyntaxHighlighter 
+                        {...rest} 
+                        style={vscDarkPlus} 
+                        language={match[1]} 
+                        PreTag="div"
+                        customStyle={{
+                          margin: 0,
+                          padding: '1.5rem',
+                          borderRadius: 0,
+                          fontSize: '0.9rem',
+                          lineHeight: 1.5
+                        }}
+                      >
+                        {String(children).replace(/\n$/, "")}
+                      </SyntaxHighlighter>
+                    </div>
                   ) : (
-                    <code {...rest} className={className}>
+                    <code {...rest} className="bg-muted px-1.5 py-0.5 rounded text-sm font-mono">
                       {children}
                     </code>
                   )
+                },
+                // Improve other elements as well
+                p(props) {
+                  return <p className="mb-4 leading-relaxed" {...props} />
+                },
+                h1(props) {
+                  return <h1 className="text-3xl font-bold mt-8 mb-4" {...props} />
+                },
+                h2(props) {
+                  return <h2 className="text-2xl font-bold mt-8 mb-4" {...props} />
+                },
+                h3(props) {
+                  return <h3 className="text-xl font-bold mt-6 mb-3" {...props} />
+                },
+                ul(props) {
+                  return <ul className="list-disc pl-6 mb-4" {...props} />
+                },
+                ol(props) {
+                  return <ol className="list-decimal pl-6 mb-4" {...props} />
+                },
+                li(props) {
+                  return <li className="mb-1" {...props} />
+                },
+                blockquote(props) {
+                  return <blockquote className="border-l-4 border-primary/30 pl-4 italic my-4" {...props} />
                 },
               }}
             >

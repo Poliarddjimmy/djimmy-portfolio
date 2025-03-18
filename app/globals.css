@@ -12,7 +12,7 @@
     --popover-foreground: 222.2 84% 4.9%;
 
     /* Changed primary color from blue to a dark gray with slight purple tint */
-    --primary: 270 5% 10%;
+    --primary: 240 5.9% 10%;
     --primary-foreground: 0 0% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -25,7 +25,7 @@
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 270 5% 10%;
+    --ring: 240 5.9% 10%;
     --radius: 0.5rem;
   }
 
@@ -39,7 +39,7 @@
 
     /* Changed primary color from blue to a lighter gray with slight purple tint */
     --primary: 240 4.8% 95.9%;
-    --primary-foreground: 270 5% 10%;
+    --primary-foreground: 240 5.9% 10%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -82,3 +82,33 @@
   }
 }
 
+/* Markdown content styling */
+.prose pre {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.prose code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.prose pre > div {
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Improve inline code appearance */
+:not(pre) > code {
+  background-color: hsl(var(--muted));
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  font-weight: 500;
+}
+
+/* Ensure proper dark mode for code blocks */
+.dark .prose pre > div {
+  background-color: hsl(var(--muted)) !important;
+}
