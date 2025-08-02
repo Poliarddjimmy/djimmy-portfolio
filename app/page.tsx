@@ -1103,7 +1103,7 @@ function ProjectsSection() {
     {
       name: "ZakaPay",
       subtitle: "ZakaPay - Digital Wallet & Payment Platform",
-      image: "/images/ZakaPay.png",
+      image: "/images/zakapay.png",
       website: "",
       app: "",
       description: `ZakaPay is a modern digital wallet and peer-to-peer payment platform tailored for underbanked communities.
