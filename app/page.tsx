@@ -95,9 +95,8 @@ export default function Home() {
               >
                 <button
                   onClick={() => scrollToSection(section)}
-                  className={`text-sm font-medium relative px-2 py-1 transition-colors ${
-                    activeSection === section ? "text-primary" : "text-muted-foreground hover:text-foreground"
-                  }`}
+                  className={`text-sm font-medium relative px-2 py-1 transition-colors ${activeSection === section ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                    }`}
                 >
                   {section.charAt(0).toUpperCase() + section.slice(1)}
                   {activeSection === section && (
@@ -122,7 +121,7 @@ export default function Home() {
                 asChild
                 className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-300"
               >
-                <Link href="/resume">
+                <Link href="/files/djimmy-poliard-resume.pdf" download target="_blank">
                   <Download className="mr-2 h-4 w-4" />
                   Resume
                 </Link>
@@ -155,9 +154,8 @@ export default function Home() {
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className={`text-xl font-medium ${
-                    activeSection === section ? "text-primary" : "text-muted-foreground"
-                  }`}
+                  className={`text-xl font-medium ${activeSection === section ? "text-primary" : "text-muted-foreground"
+                    }`}
                 >
                   {section.charAt(0).toUpperCase() + section.slice(1)}
                 </button>
@@ -459,7 +457,7 @@ function ExperienceSection() {
           <ExperienceCard
             company="Dixivox"
             position="Software Development Consultant"
-            period="Contract (Since 2018)"
+            period="Contract (2018-2022)"
             description="A company that builds solutions based on communication and education."
             delay={0.3}
             inView={inView}
@@ -474,7 +472,7 @@ function ExperienceSection() {
               },
               {
                 name: "Konekte'm",
-                period: "Dec 2021 – Current",
+                period: "Dec 2021 – 2022",
                 description:
                   "Konekte'm is an Enterprise communication platform for voice, text and social media where customers can find services such as Call Center, CRM, Soft Phone, Voice & SMS Interactive. Each service builds using different technologies.",
                 tasks: [
@@ -904,13 +902,13 @@ function SkillsSection() {
           className="mt-12 grid gap-6 md:grid-cols-3"
         >
           <div className="bg-card rounded-lg p-6 border border-border/50 shadow-sm hover:shadow-md transition-all duration-300">
-            <div className="text-4xl font-bold text-primary mb-2">9+</div>
+            <div className="text-4xl font-bold text-primary mb-2">{new Date().getFullYear() - 2017}+</div>
             <div className="text-lg font-medium">Years Experience</div>
             <p className="text-sm text-muted-foreground">Building scalable web applications</p>
           </div>
 
           <div className="bg-card rounded-lg p-6 border border-border/50 shadow-sm hover:shadow-md transition-all duration-300">
-            <div className="text-4xl font-bold text-primary mb-2">20+</div>
+            <div className="text-4xl font-bold text-primary mb-2">12+</div>
             <div className="text-lg font-medium">Projects Completed</div>
             <p className="text-sm text-muted-foreground">Across various industries</p>
           </div>
@@ -965,7 +963,7 @@ function EducationSection() {
                 <div className="bg-card rounded-lg p-5 border border-border/50 shadow-sm hover:shadow-md transition-all duration-300">
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
                     <h4 className="font-semibold">AS Degree in Computer Programming and Analysis</h4>
-                    <div className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm">2024 - Present</div>
+                    <div className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm">2024 Present</div>
                   </div>
                   <p className="text-muted-foreground">Valencia College</p>
                 </div>
@@ -980,7 +978,7 @@ function EducationSection() {
                 <div className="bg-card rounded-lg p-5 border border-border/50 shadow-sm hover:shadow-md transition-all duration-300">
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
                     <h4 className="font-semibold">Bachelor's Degree in Electronic Engineering</h4>
-                    <div className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm">2010 - 2014</div>
+                    <div className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm">2010 2014</div>
                   </div>
                   <p className="text-muted-foreground">Université Lumière (Ulum)</p>
                 </div>
@@ -1088,6 +1086,43 @@ function ProjectsSection() {
     threshold: 0.1,
   })
 
+
+  const projects = [
+    {
+      name: "LennHT",
+      subtitle: "LennHT - Online Training Platform",
+      image: "/images/lennht.png",
+      website: "https://lennht.com",
+      app: "https://lennht.dev",
+      description: `The LennHT is a leading online learning platform that helps anyone learn business, software, technology
+    and creative skills to achieve personal and professional goals. Through individual, corporate and
+    academic subscriptions, members have access to the LennHT video library of engaging, top-quality courses
+    taught by recognized industry experts.`,
+      technologies: ["Laravel(PHP)", "Next.Js(React)", "Bootstrap", "TypeScript", "PostgreSQL", "Git", "Github", "Stripe"],
+    },
+    {
+      name: "ZakaPay",
+      subtitle: "ZakaPay - Digital Wallet & Payment Platform",
+      image: "/images/ZakaPay.png",
+      website: "",
+      app: "",
+      description: `ZakaPay is a modern digital wallet and peer-to-peer payment platform tailored for underbanked communities.
+    It enables users to send and receive money, manage savings, pay bills, and access financial services securely from their phone.
+    Designed with accessibility and simplicity in mind, ZakaPay bridges the gap between traditional finance and everyday users.`,
+      technologies: ["Next.Js(React)", "Tailwind CSS", "PostgreSQL", "Marqeta", "Stripe", "Prisma"],
+    },
+    {
+      name: "Operyo",
+      subtitle: "Operyo - Modern ERP for Small Teams",
+      image: "/images/operyo.png", // make sure this image exists or use a placeholder
+      website: "",
+      app: "",
+      description: `Operyo is a modular ERP platform designed for small and medium-sized businesses. It integrates core business
+    operations like inventory, HR, CRM, finance, and analytics into a single, customizable web-based system.`,
+      technologies: ["Next.Js(React)", "TypeScript", "Tailwind CSS", "PostgreSQL", "Prisma"],
+    }
+  ];
+
   return (
     <section id="projects" ref={ref} className="py-16 md:py-24">
       <div className="container">
@@ -1107,52 +1142,58 @@ function ProjectsSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-4xl mx-auto"
+          className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl w-full justify-items-center"
         >
-          <div className="bg-card rounded-lg overflow-hidden border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="relative h-60 bg-gradient-to-r from-primary/20 to-primary/40 flex items-center justify-center">
-              <div className="absolute inset-0 bg-grid-pattern opacity-30" style={{ background: 'url(/images/lennht.png)' }}></div>
-              <div className="text-4xl font-bold text-white">LennHT</div>
-            </div>
-
-            <div className="p-8">
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-                <h3 className="text-2xl font-semibold">LennHT - Online Training Platform</h3>
-                <div className="flex gap-2">
-                  <Link href="https://lennht.com" target="_blank">
-                    <Button variant="outline" size="sm" className="gap-1">
-                      <ExternalLink className="h-4 w-4" />
-                      Website
-                    </Button>
-                  </Link>
-                  <Link href="https://lennht.dev" target="_blank">
-                    <Button variant="outline" size="sm" className="gap-1">
-                      <ExternalLink className="h-4 w-4" />
-                      App
-                    </Button>
-                  </Link>
-                </div>
+          {projects.map((project, index) => (
+            <div
+              key={project.name}
+              className="w-[90%] md:w-[95%] lg:w-[100%] bg-card rounded-lg overflow-hidden border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col"
+            >
+              <div className="relative h-48 bg-gradient-to-r from-primary/20 to-primary/40 flex items-center justify-center">
+                <div
+                  className="absolute inset-0 bg-grid-pattern opacity-30"
+                  style={{ background: `url(${project.image})`, backgroundSize: "cover", backgroundPosition: "center" }}
+                ></div>
+                <div className="text-2xl font-bold text-white z-10">{project.name}</div>
               </div>
 
-              <p className="mb-6 text-muted-foreground">
-                The LennHt is a leading online learning platform that helps anyone learn business, software, technology
-                and creative skills to achieve personal and professional goals. Through individual, corporate and
-                academic subscriptions, members have access to the LennHt video library of engaging, top-quality courses
-                taught by recognized industry experts.
-              </p>
+              <div className="p-6 flex flex-col justify-between flex-grow">
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">{project.subtitle}</h3>
+                  <p className="mb-4 text-sm text-muted-foreground">{project.description}</p>
+                </div>
 
-              <div>
-                <h4 className="font-medium mb-3">Main Technologies:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {["Laravel(PHP)", "Next.Js(React)", "TypeScript", "PostgreSQL", "Git", "Github"].map((tech) => (
-                    <span key={tech} className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm">
-                      {tech}
-                    </span>
-                  ))}
+                <div className="mt-auto">
+                  <h4 className="font-medium mb-2 text-sm">Main Technologies:</h4>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex gap-2">
+                    <Link href={project.website} target="_blank">
+                      <Button variant="outline" size="sm" className="gap-1">
+                        <ExternalLink className="h-4 w-4" />
+                        Website
+                      </Button>
+                    </Link>
+                    <Link href={project.app} target="_blank">
+                      <Button variant="outline" size="sm" className="gap-1">
+                        <ExternalLink className="h-4 w-4" />
+                        App
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          ))}
         </motion.div>
       </div>
     </section>
