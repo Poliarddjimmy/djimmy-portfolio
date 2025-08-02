@@ -1177,18 +1177,18 @@ function ProjectsSection() {
                   </div>
 
                   <div className="flex gap-2">
-                    <Link href={project.website} target="_blank">
+                    {!!project.website && <Link href={project.website} target="_blank">
                       <Button variant="outline" size="sm" className="gap-1">
                         <ExternalLink className="h-4 w-4" />
                         Website
                       </Button>
-                    </Link>
-                    <Link href={project.app} target="_blank">
+                    </Link>}
+                    {!!project.app && <Link href={project.app} target="_blank">
                       <Button variant="outline" size="sm" className="gap-1">
                         <ExternalLink className="h-4 w-4" />
                         App
                       </Button>
-                    </Link>
+                    </Link>}
                   </div>
                 </div>
               </div>
